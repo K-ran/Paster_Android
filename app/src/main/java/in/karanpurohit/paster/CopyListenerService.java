@@ -46,7 +46,6 @@ public class CopyListenerService extends Service {
         Log.d(CopyListenerService.DEBUG_TAG,"Starting Thread");
         r1= new Reciever(bReader,getApplicationContext(),this);
         r1.start();
-        Toast.makeText(CopyListenerService.this, "Service Started", Toast.LENGTH_SHORT).show();
         Log.d(DEBUG_TAG,"Service started");
         SharedPreferenceManager.setValue(this,MainActivity.KEY,"true");
         ((ClipboardManager) getSystemService(CLIPBOARD_SERVICE)).addPrimaryClipChangedListener(listener);
@@ -60,6 +59,7 @@ public class CopyListenerService extends Service {
 
     @Override
     public void onDestroy() {
+
         Toast.makeText(CopyListenerService.this, "Service Stoped", Toast.LENGTH_SHORT).show();
         Log.d(DEBUG_TAG,"Service stoped");
         if(r1!=null)
