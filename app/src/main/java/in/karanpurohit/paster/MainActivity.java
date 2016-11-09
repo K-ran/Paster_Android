@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.BufferedWriter;
@@ -46,6 +47,19 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferenceManager.setValue(this,KEY,"false");
         }
         Log.d("Started onCreate ",SharedPreferenceManager.getValue(this,KEY));
+        ((TextView)(findViewById(R.id.tvAboutUs))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAboutUs(v);
+            }
+        });
+        Log.d("Started onCreate ",SharedPreferenceManager.getValue(this,KEY));
+        ((TextView)(findViewById(R.id.tvInstructions))).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInstructions(v);
+            }
+        });
     }
 
     void showInstructions(View view){
