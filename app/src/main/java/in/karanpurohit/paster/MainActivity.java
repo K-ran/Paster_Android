@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -47,6 +48,24 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Started onCreate ",SharedPreferenceManager.getValue(this,KEY));
     }
 
+    void showInstructions(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("Instructions")
+                .setMessage("1. Connect to your LAN" +
+                        "\n2. Start the desktop Paster app" +
+                        "\n3. Write you PC's ip in your Android app" +
+                        "\n4. Click connect and enjoy!")
+                .setIcon(android.R.drawable.ic_menu_info_details)
+                .show();
+    }
+
+    void showAboutUs(View view){
+        new AlertDialog.Builder(this)
+                .setTitle("About us")
+                .setMessage("Created by Karan Purohit. Do rate the app." +
+                        "\nThat's all folks!")
+                .show();
+    }
     public void connect(View view) throws IOException {
         if(SharedPreferenceManager.getValue(this,KEY).equals("false")){
             pcConnecter pcConnecter = new pcConnecter();

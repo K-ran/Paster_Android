@@ -15,7 +15,7 @@
         android:id="@+id/etIp"
         android:gravity="center"
         android:layout_centerInParent="true"
-        android:hint="Please enter the IP for your computer"
+        android:hint="Please enter the IP of your computer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="number|text"
@@ -32,4 +32,27 @@
         android:layout_below="@id/etIp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <in.karanpurohit.paster.CustomViews.TextViewHelveticalThin
+            android:id="@+id/tvInstructions"
+            android:layout_marginRight="45dp"
+            android:text="Instructions"
+            android:textSize="18dp"
+            android:onClick="showInstructions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <in.karanpurohit.paster.CustomViews.TextViewHelveticalThin
+            android:id="@+id/tvAboutUs"
+            android:onClick="showAboutUs"
+            android:text="About us"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
 </RelativeLayout>
